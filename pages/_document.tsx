@@ -7,7 +7,7 @@ export default function Document() {
         <meta charSet="UTF-8" />
         <meta name="title" content="KidsShop" />
         <meta name="robots" content="index, follow" />
-        <link rel="icon" type="image/png" href="/image/icons/favicon_1.png" />
+        <link rel="icon" type="image/png" href="/img/icons/favicon_1.png" />
 
         {/** SEO -> Search Enginge Optimization **/}
         <meta
