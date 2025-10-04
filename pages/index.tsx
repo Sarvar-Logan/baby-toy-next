@@ -1,4 +1,4 @@
-import withLayoutMain from "@/libs/components/LayoutHome";
+import withLayoutMain from "@/libs/components/layout/LayoutHome";
 import { Box, Container, Stack } from "@mui/material";
 import { NextPage } from "next";
 
@@ -17,7 +17,7 @@ const Home: NextPage = () => {
           </Stack>
        
           <Stack>
-            <Stack>Advertisment</Stack>
+            <Stack className="container">Advertisment</Stack>
           </Stack>
        
           <Stack>
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           </Stack>
        
           <Stack>
-            <Stack>Photos</Stack>
+            <Stack className="container">Photos</Stack>
           </Stack>
        
           <Stack>

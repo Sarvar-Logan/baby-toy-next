@@ -1,5 +1,5 @@
-import withLayoutBasic from "@/libs/components/LayoutBasic";
-import withLayoutMain from "@/libs/components/LayoutHome";
+import withLayoutBasic from "@/libs/components/layout/LayoutBasic";
+import withLayoutMain from "@/libs/components/layout/LayoutHome";
 import { Box, Container, Stack } from "@mui/material";
 import { NextPage } from "next";
 
