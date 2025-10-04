@@ -20,11 +20,13 @@ body::-webkit-scrollbar {
   #top {
     .navbar {
       .navbar-top {
-        position: fixed;
+        position: relative;
         width: 100%;
         height: 41px;
         display: flex;
         flex-direction: row;
+        position: fixed;
+        z-index: 10;
         align-items: center;
         box-sizing: border-box;
 
@@ -71,6 +73,7 @@ body::-webkit-scrollbar {
               margin-left: 120px;
               color: white;
               font-size: 16px;
+              font-family: Comfortaa;
 
               img {
                 width: 30px;
@@ -186,12 +189,16 @@ body::-webkit-scrollbar {
 
 
       .navbar-main {
+        position: relative;
         position: fixed;
         width: 100%;
+        padding-top: 41px;
         height: 215px;
         margin-top: 20px;
         display: flex;
         flex-direction: row;
+        z-index: 10;
+        box-sizing: border-box;
         align-items: center;
 
         .container {
@@ -199,29 +206,73 @@ body::-webkit-scrollbar {
           flex-direction: row;
           padding: 0 50px;
           justify-content: space-between;
+          align-items: center;
 
           .logo-box {
-            width: 144px;
-            height: 53px;
-            cursor: pointer;
+            text-align: center;
+
+            img {
+              width: 150px;
+              height: 120px;
+              cursor: pointer;
+            }
           }
 
           .router-box {
-            position: relative;
+            width: 540px;
             display: flex;
             flex-direction: row;
+            height: 64px;
+            justify-content: center;
+            align-items: center;
             justify-content: space-between;
+            gap: 8px;
 
             div {
               color: var(--Header, #191919);
               text-align: center;
-              /* Menu */
               font-family: Comfortaa;
-              font-size: 16px;
+              font-size: 17px;
               font-style: normal;
-              font-weight: 700;
+              font-weight: 500;
               line-height: normal;
             }
+          }
+
+          .right-box {
+            display: flex;
+            position: relative;
+            flex-direction: row;
+            align-items: center;
+            gap: 30px;
+
+            .search-field {
+              position: relative;
+              display: flex;
+
+              .text-field {
+                position: absolute;
+                bottom: 18px;
+                width: 250px;
+                height: 10px;
+                padding: 10px 0 10px 20px;
+                align-items: center;
+                gap: 10px;
+                border-radius: 10px;
+                position: relative;
+              }
+              button {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                background-color: #0F83B2;
+                border-radius: 20px;
+                color: white;
+                right: 1px;
+                top: -10px;
+              }
+            }
+
           }
         }
       }

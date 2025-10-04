@@ -11,7 +11,7 @@ const withLayoutMain = (Component: any) => {
         </Head>
 
         <Stack id="pc-wrap"> 
-          <Stack id="top">
+          <Stack id={"top"}>
             <Top/>
           </Stack>
           <Stack className="header-main">Header Main</Stack>

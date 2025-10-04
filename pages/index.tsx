@@ -6,7 +6,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Stack>
-        <Stack flexDirection={"column"}>
+        <Stack flexDirection={"column"} sx={{marginTop: "276px"}}>
       
           <Stack>
             <Stack className="container">SelectType</Stack>
