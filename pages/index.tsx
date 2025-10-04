@@ -2,22 +2,50 @@ import withLayoutMain from "@/libs/components/LayoutHome";
 import { Box, Container, Stack } from "@mui/material";
 import { NextPage } from "next";
 
- const Home: NextPage = () => {
+const Home: NextPage = () => {
   return (
     <>
-      <Container>
+      <Stack>
         <Stack flexDirection={"column"}>
-          <Box>SelectType</Box>
-          <Box>TopPorodcuts</Box>
-          <Box>Advertisment</Box>
-          <Box>PopularProduct</Box>
-          <Box>FromCustomers</Box>
-          <Box>Photos</Box>
-          <Box>TopUsers</Box>
-          <Box>Delivery</Box>
-          <Box>NewsLetter</Box>
+      
+          <Stack>
+            <Stack className="container">SelectType</Stack>
+          </Stack>
+       
+          <Stack>
+            <Stack className="container">TopPorodcuts</Stack>
+          </Stack>
+       
+          <Stack>
+            <Stack>Advertisment</Stack>
+          </Stack>
+       
+          <Stack>
+            <Stack className="container">PopularProduct</Stack>
+          </Stack>
+       
+          <Stack>
+            <Stack className="container">FromCustomers</Stack>
+          </Stack>
+       
+          <Stack>
+            <Stack>Photos</Stack>
+          </Stack>
+       
+          <Stack>
+            <Stack className="container">TopUsers</Stack>
+          </Stack>
+       
+          <Stack>
+            <Stack className="container">Delivery</Stack>
+          </Stack>
+       
+          <Stack>
+            <Stack className="container">NewsLetter</Stack>
+          </Stack>
+       
         </Stack>
-      </Container>
+      </Stack>
 
     </>
   );

@@ -5,9 +5,9 @@ export default function Document() {
       <Html lang="en">
       <Head>
         <meta charSet="UTF-8" />
-        <meta name="title" content="Nestar Demo" />
+        <meta name="title" content="KidsShop" />
         <meta name="robots" content="index, follow" />
-        <link rel="icon" type="image/png" href="/img/icons/favicon.ico" />
+        <link rel="icon" type="image/png" href="/image/icons/favicon_1.png" />
 
         {/** SEO -> Search Enginge Optimization **/}
         <meta
