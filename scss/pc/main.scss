@@ -17,6 +17,8 @@ body::-webkit-scrollbar {
 }
 
 #pc-wrap {
+
+  // NAVBAR TOP 
   #top {
     .navbar {
       .navbar-top {
@@ -186,9 +188,7 @@ body::-webkit-scrollbar {
         }
       }
 
-
-
-
+      // NAVBAR TOP 
       .navbar-main {
         position: relative;
         // position: fixed;
@@ -213,8 +213,8 @@ body::-webkit-scrollbar {
             text-align: center;
 
             img {
-              width: 150px;
-              height: 120px;
+              width: 160px;
+              height: 140px;
               cursor: pointer;
             }
           }
@@ -251,27 +251,25 @@ body::-webkit-scrollbar {
               position: relative;
               display: flex;
 
-              .text-field {
-                position: absolute;
-                bottom: 18px;
-                width: 250px;
-                height: 10px;
-                padding: 10px 0 10px 20px;
-                align-items: center;
-                gap: 10px;
-                border-radius: 10px;
+              input {
                 position: relative;
+                width: 200px;
+                height: 40px;
+                gap: 10px;
+                border-radius: 30px;
+                border: 1px solid rgb(185, 184, 184) !important;
+
               }
 
               button {
                 position: absolute;
-                width: 40px;
-                height: 40px;
+                width: 39px;
+                height: 39px;
                 background-color: #0F83B2;
-                border-radius: 20px;
+                border-radius: 19.5px;
                 color: white;
-                right: 1px;
-                top: -10px;
+                right: -1px;
+                top: 0px;
               }
             }
 
@@ -284,8 +282,9 @@ body::-webkit-scrollbar {
 
 
 
-
+  // CHAQALOQ BOR JOY 
   .header-main {
+    width: 100%;
     position: relative;
     height: 810px;
     background-image: url("/img/headerImages/Rectangle 40.svg");
@@ -294,15 +293,15 @@ body::-webkit-scrollbar {
     background-repeat: no-repeat;
 
     .header-info {
+      width: 587px;
       position: absolute;
       display: flex;
-      width: 100%;
       flex-direction: column;
-      left: 900px;
+      right: 120px;
+      align-items: center;
       top: 178px;
 
       .header-title {
-        position: relative;
         color: #1096B5;
 
         font-family: "Baloo Bhaina";
@@ -332,15 +331,149 @@ body::-webkit-scrollbar {
         border-radius: 30px;
       }
     }
-
-
-
-
   }
 
+
+
+  //FOOTER. copy
   #footer {
-    background-color: aquamarine;
+    position: relative;
+    padding: 60px 0px 18px 0px;
+    width: 100%;
+    height: 566;
+    display: flex;
+    flex-direction: row;
+    background-color: #0F83B2;
+
+    .footer-container {
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+
+      .main {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        .left {
+          height: 360px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .footer-box {
+            display: flex;
+            flex-direction: column;
+
+            .logo {
+              width: 190px;
+              height: 150px;
+              cursor: pointer;
+            }
+
+            span {
+              color: #bebdbd;
+              font-family: $font;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              text-transform: capitalize;
+            }
+
+            p {
+              color: #fff;
+              font-family: $font;
+              font-size: 15px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+              text-transform: capitalize;
+            }
+
+            .media-box {
+              margin-top: 12px;
+              gap: 29px;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              color: #bdbdbd;
+
+
+              svg {
+                font-size: 32px;
+                margin-right: 22px;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+
+        .right {
+          display: flex;
+          flex-direction: column;
+          width: 700px;
+
+          .bottom {
+            margin-top: 60px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            div {
+              display: flex;
+              flex-direction: column;
+
+              strong {
+                margin-bottom: 3px;
+                color: #fff;
+                font-family: $font;
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                text-transform: capitalize;
+              }
+
+              span {
+                margin-top: 25px;
+                color: #bebdbd;
+                font-family: $font;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                cursor: pointer;
+
+                &:hover {
+                  color: #ffffff;
+                  text-decoration-line: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .second {
+        margin-top: 60px;
+        height: 45px;
+        border-top: 1px solid #212329;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        span {
+          color: #bebdbd;
+          font-family: $font;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+    }
   }
+
 }
 
 
@@ -601,23 +734,23 @@ body::-webkit-scrollbar {
 
 
 
-// .no-data {
-//   padding: 30px 20px;
-//   width: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
+.no-data {
+  padding: 30px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-//   img {
-//     width: 56px;
-//     margin-bottom: 2px;
-//   }
+  img {
+    width: 56px;
+    margin-bottom: 2px;
+  }
 
-//   p {
-//     color: #bdbdbd;
-//     text-align: center;
-//   }
-// }
+  p {
+    color: #bdbdbd;
+    text-align: center;
+  }
+}
 
 
 

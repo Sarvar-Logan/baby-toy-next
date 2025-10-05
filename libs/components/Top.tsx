@@ -53,9 +53,9 @@ const Top = () => {
                 <img src="/img/icons/cart.png" alt="" />
               </Link>
               <Stack className='search-field'>
-                <TextField className="text-field" placeholder="search" size="small" />
+                <input id="search" type="text" placeholder="search"/>
                 <Box className="search-button">
-                  <Button type="submit">
+                  <Button id="search" type="submit">
                     <img src="/img/icons/icon.png" alt="search" />
                   </Button>
                 </Box>
