@@ -43,23 +43,17 @@ const Top = () => {
                 </>
 
               }
-
-
-              <Link href={"/cs"}>
-                <div>CS</div>
-              </Link>
-
               <Link href={"/help"}>
                 <div>Help</div>
               </Link>
             </Stack>
 
             <Stack className="right-box">
-              <Link href="/cart" sx={{color: "black"}}>
+              <Link href="/cart" sx={{ color: "black" }}>
                 <img src="/img/icons/cart.png" alt="" />
               </Link>
-              <Stack className='search-field'> 
-                <TextField className="text-field" placeholder="search" size="small"/>
+              <Stack className='search-field'>
+                <TextField className="text-field" placeholder="search" size="small" />
                 <Box className="search-button">
                   <Button type="submit">
                     <img src="/img/icons/icon.png" alt="search" />
