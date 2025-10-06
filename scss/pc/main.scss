@@ -2,6 +2,7 @@
 Bu file esa osha pc ni ichda nima style bosa oshlar shu yerda ishlatiladi
 */
 @import '/scss/variables.scss';
+@import '/scss/pc/homepage/homepage.scss';
 
 body {
   -ms-overflow-style: none;
@@ -18,7 +19,7 @@ body::-webkit-scrollbar {
 
 #pc-wrap {
 
-  // NAVBAR TOP 
+  // NAVBAR TOP & BOTTOM
   #top {
     .navbar {
       .navbar-top {
@@ -188,7 +189,6 @@ body::-webkit-scrollbar {
         }
       }
 
-      // NAVBAR TOP 
       .navbar-main {
         position: relative;
         // position: fixed;
@@ -201,6 +201,7 @@ body::-webkit-scrollbar {
         // z-index: 10;
         box-sizing: border-box;
         align-items: center;
+        margin-bottom: 20px;
 
         .container {
           display: flex;
@@ -333,6 +334,9 @@ body::-webkit-scrollbar {
     }
   }
 
+
+  // Header-basic layout home use if needed
+  // .header-basic {}
 
 
   //FOOTER. copy
