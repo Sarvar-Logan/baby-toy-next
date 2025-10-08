@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Tune } from '@mui/icons-material';
+import RecentBlogCard from './RecentBlogCard';
 
 
 
@@ -16,41 +17,41 @@ import { Tune } from '@mui/icons-material';
 
 
 
-const PopularProducts = () => {
-  const [popularProducts, setPopularProducts] = useState<number[]>([
-    1, 2, 3, 4, 5, 6, 7
+const RecentBlog = () => {
+  const [recentBlog, setRecentBlog] = useState<number[]>([
+    1, 2, 3, 4, 
   ]);
 
 
 
   return (
-    <Stack className={'popular-products'}>
+    <Stack className={'recent-blog'}>
       <Stack className={'container'}>
         <Stack className={'info-box'}>
-          <span>Customer Loves</span>
-          <p>Popular product</p>
+          <span>Hear from Other Happy Parents</span>
+          <p>Customer testimonials</p>
         </Stack>
         <Stack className={'card-box'}>
-          {popularProducts.length === 0 ? (
+          {recentBlog.length === 0 ? (
             <Box component={'div'} className={'empty-list'}>
-              Trends Empty
+              No recent Blogs
             </Box>
           ) : (
             <Swiper
-              className="product-swiper"
+              className="blog-swiper"
               modules={[Navigation, Pagination, Autoplay]}
               spaceBetween={20}
-              slidesPerView={4}
+              slidesPerView={3}
               pagination={{
                 clickable: true,
-                el: '.swiper-pagination',
+                el: '.pagination-blog',
               }}
               navigation={{
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-blog-next',
+                prevEl: '.swiper-blog-prev',
               }}
               autoplay={{
-                delay: 3000,
+                delay: 4000,
                 disableOnInteraction: false,
               }}
               breakpoints={{
@@ -67,16 +68,16 @@ const PopularProducts = () => {
                   spaceBetween: 15
                 },
                 1024: {
-                  slidesPerView: 4,
+                  slidesPerView: 3,
                   spaceBetween: 20
                 }
               }}
             >
-              {popularProducts.map((_, index) => {
+              {recentBlog.map((_, index) => {
 
                 return (
-                  <SwiperSlide key={index} className={'prodcut-swiper-slide'}>
-                    <PopularProductCard />
+                  <SwiperSlide key={index} className={'blog-swiper-slide'}>
+                    <RecentBlogCard />
                   </SwiperSlide>
                 );
               })}
@@ -84,15 +85,14 @@ const PopularProducts = () => {
             </Swiper>
           )}
         </Stack>
-          <div className={'pagination-box'}>
-            <div className="swiper-button-prev">
+          <div className={'blog-pagination-box'}>
+            <div className="swiper-blog-prev">
               <img src='img/icons/BackTo.svg' />
             </div>
-            <div className="swiper-pagination"></div>
-            <div className="swiper-button-next" >
+            <div className="pagination-blog"></div>
+            <div className="swiper-blog-next" >
               <img src='img/icons/Next page.svg' />
             </div>
-
           </div>
       </Stack>
     </Stack>
@@ -100,4 +100,4 @@ const PopularProducts = () => {
 };
 
 
-export default PopularProducts;
+export default RecentBlog;

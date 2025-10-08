@@ -27,12 +27,13 @@ const ProductCard = () => {
             $29.00
             <span className="old-price">$39.00</span>
           </div>
-          <div className='view'>
-            <VisibilityOutlinedIcon className='icon' />
-          </div>
-
           <div className={"rating"}>
             {'★'.repeat(5) + '☆'.repeat(5 - 5)}
+          </div>
+
+          <div className='view'>
+            <VisibilityOutlinedIcon className='icon' />
+            <span>30</span>
           </div>
         </div>
       </div>

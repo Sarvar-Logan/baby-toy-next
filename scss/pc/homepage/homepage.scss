@@ -15,124 +15,33 @@
         /* heading product */
         font-family: "Chalkboard SE";
         ;
-        font-size: 38px;
+        font-size: 35px;
         font-style: normal;
-        font-weight: 700;
+        font-weight: 600;
         line-height: 120%;
         /* 45.6px */
       }
 
       p {
         color: var(--Header1, #2D2D2D);
-        /* heading 1 product */
         font-family: Comfortaa;
         font-size: 20px;
         font-style: normal;
         font-weight: 500;
         line-height: 140%;
-        /* 28px */
+        margin-top: 12px;
+
       }
 
       .p-below {
         color: var(--Header1, #4a4a4a);
-        /* heading 1 product */
         font-family: Comfortaa;
         font-size: 15px;
         font-style: normal;
         font-weight: 500;
         line-height: 140%;
-        /* 28px */
       }
     }
-
-
-    .bottom {
-      display: flex;
-      flex-direction: row;
-
-      .pagination-box {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        .swiper-pagination-bullet.swiper-pagination-bullet-active {
-          background: #000000;
-        }
-
-        .swiper-button-next {
-          cursor: pointer;
-        }
-
-        .swiper-button-prev {
-          cursor: pointer;
-          margin-left: 30px;
-
-        }
-      }
-
-      .more-box {
-        display: flex;
-        flex-direction: row;
-        cursor: pointer;
-        align-items: center;
-
-        span {
-          color: #181a20;
-          font-family: $font;
-          font-size: 15px;
-          font-style: normal;
-          font-weight: 600;
-          line-height: normal;
-          text-transform: capitalize;
-        }
-
-        img {
-          margin-left: 10px;
-          width: 16px;
-          height: 16px;
-        }
-      }
-
-      .btn-box {
-        display: flex;
-        flex-direction: row;
-
-        button {
-          border-radius: 6px;
-          background: rgba(255, 255, 255, 0.07);
-          color: #ffffff;
-          font-family: $font;
-          font-size: 14px;
-          font-style: normal;
-          font-weight: 500;
-          line-height: 28px;
-          text-transform: capitalize;
-
-          &:first-child {
-            margin-right: 20px;
-          }
-
-          &.active {
-            border: 1px solid #181a20;
-            background: #fff;
-            color: #181a20;
-            font-family: $font;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 28px;
-          }
-        }
-      }
-    }
-
-
-
-
-
-
-
-
 
     .collection {
       display: flex;
@@ -287,6 +196,7 @@
               flex-direction: column;
               justify-content: space-between;
               padding-left: 4px;
+              position: relative;
 
               .title {
                 font-size: 16px;
@@ -312,6 +222,23 @@
                 margin-top: 5px;
                 color: #fdd835;
               }
+
+              .view {
+                display: flex;
+                position: absolute;
+                top: 12px;
+                right: 20px;
+                color: #888;
+                gap: 2px;
+                align-items: center;
+
+                span {
+                  font-size: 12px
+                }
+
+                ;
+              }
+
             }
           }
 
@@ -342,14 +269,38 @@
 
     .popular-products {
       width: 100%;
-      height: 642px;
+      height: 700px;
+      margin-top: 10px;
 
       .container {
         display: flex;
-        padding: 50px 0;
         flex-direction: column;
         align-items: center;
         gap: 60px;
+        margin-top: 50px;
+
+        .pagination-box {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            background: #000000;
+          }
+
+          .swiper-button-next {
+            cursor: pointer;
+          }
+
+          .swiper-pagination {
+            margin-bottom: 25px;
+          }
+
+          .swiper-button-prev {
+            cursor: pointer;
+            margin-left: 30px;
+          }
+        }
 
 
         .card-box {
@@ -368,7 +319,7 @@
             width: 100%;
             height: 450px;
 
-            .prdocut-swiper-slide {
+            .product-swiper-slide {
               display: flex;
               height: 100%;
               margin: 10px 0 0 10px;
@@ -377,6 +328,7 @@
           }
 
           .card {
+            margin-bottom: 50px;
             width: 295px;
             height: 398px;
             border-radius: 10px;
@@ -478,6 +430,163 @@
 
 
 
+    .recent-blog {
+      width: 100%;
+      height: 600px;
+
+      .container {
+        display: flex;
+        padding: 50px 0;
+        flex-direction: column;
+        align-items: center;
+
+        .card-box {
+          width: 100%;
+          position: relative;
+          padding: 50px 0;
+
+
+          .empty-list {
+            width: 100%;
+            height: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .blog-swiper {
+            width: 100%;
+            height: 280px;
+
+            .blog-swiper-slide {
+              display: flex;
+              height: 100%;
+              margin: 10px 0 0 10px;
+            }
+          }
+
+          .card {
+            background-color: #FAEFEF;
+            width: 400px;
+            height: 216px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: transform 0.3s;
+            padding-left: 20px;
+            padding-bottom: 10px;
+            cursor: pointer;
+            gap: 20px;
+
+
+            &:hover {
+              opacity: 1;
+              transform: scale(1.05);
+            }
+
+            .image1 {
+              left: 0;
+              position: absolute;
+              bottom: 60px;
+            }
+
+            .image2 {
+              right: 85px;
+              top: 18px;
+              position: absolute;
+
+            }
+
+            .image3 {
+              right: 0;
+              bottom: 50px;
+              position: absolute;
+
+            }
+
+
+            .rating {
+              margin-top: 5px;
+              color: #fdd835;
+            }
+
+            .blog-info {
+              color: #4A4748;
+              font-family: Comfortaa;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 130%;
+            }
+
+            .writer-info {
+              width: 100%;
+              display: flex;
+              flex-direction: row;
+              gap: 10px;
+              align-items: center;
+
+              img {
+                width: 40px;
+                height: 40px;
+                border-radius: 40px;
+              }
+
+              span {
+                color: #4A4748;
+                font-family: Comfortaa;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 120%;
+                /* 19.2px */
+              }
+
+            }
+
+
+          }
+
+        }
+
+
+
+        .blog-pagination-box {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 20px;
+
+          .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            background: #000000;
+          }
+
+          .swiper-blog-next {
+            cursor: pointer;
+
+            img {
+              width: 35px;
+              height: 35px;
+            }
+          }
+
+          .swiper-blog-prev {
+            cursor: pointer;
+
+            img {
+              width: 30px;
+              height: 30px;
+            }
+
+          }
+        }
+
+      }
+
+    }
 
 
 
@@ -488,6 +597,5 @@
 
 
 
-    
   }
 }
