@@ -2,9 +2,7 @@ import { Box, Link, Stack } from "@mui/material"
 import { useState } from "react";
 
 const CollectionCard = () => {
-  const [trendProperties, setTrendProperties] = useState<number[]>([
-    1, 2, 3, 4, 5, 6, 7,
-  ]);
+
   return (
     <>
       <Stack className="collection-card">

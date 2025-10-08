@@ -1,4 +1,8 @@
+import Advertisement from "@/libs/components/homepage/Advertisment";
 import Collection from "@/libs/components/homepage/Collection";
+import PopularProducts from "@/libs/components/homepage/PopularProdcut";
+import PopularProduct from "@/libs/components/homepage/PopularProdcut";
+import TopPick from "@/libs/components/homepage/TopPick";
 import withLayoutMain from "@/libs/components/layout/LayoutHome";
 import { Box, Container, Stack } from "@mui/material";
 import { NextPage } from "next";
@@ -8,12 +12,10 @@ const Home: NextPage = () => {
     <>
       <Stack className="home-page">
         <Collection />
-        <Stack className="container">TopPorodcuts</Stack>
+        <TopPick/>
+        <Advertisement/>
+        <PopularProducts/>
 
-
-        <Stack className="container">Advertisment</Stack>
-
-        <Stack className="container">PopularProduct</Stack>
 
         <Stack className="container">FromCustomers</Stack>
 

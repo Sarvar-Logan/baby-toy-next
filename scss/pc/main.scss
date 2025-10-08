@@ -29,7 +29,7 @@ body::-webkit-scrollbar {
         display: flex;
         flex-direction: row;
         position: fixed;
-        z-index: 10;
+        z-index: 20;
         align-items: center;
         box-sizing: border-box;
 
@@ -254,12 +254,13 @@ body::-webkit-scrollbar {
 
               input {
                 position: relative;
+                padding-left: 10px;
+
                 width: 200px;
                 height: 40px;
                 gap: 10px;
                 border-radius: 30px;
                 border: 1px solid rgb(185, 184, 184) !important;
-
               }
 
               button {
