@@ -49,9 +49,6 @@ const Top = () => {
             </Stack>
 
             <Stack className="right-box">
-              <Link href="/cart" sx={{ color: "black" }}>
-                <img src="/img/icons/cart.png" alt="" />
-              </Link>
               <Stack className='search-field'>
                 <input id="search" type="text" placeholder="search"/>
                 <Box className="search-button">

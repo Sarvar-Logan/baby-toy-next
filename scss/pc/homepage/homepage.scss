@@ -273,11 +273,10 @@
       margin-top: 10px;
 
       .container {
+        margin-top: 50px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 60px;
-        margin-top: 50px;
 
         .pagination-box {
           display: flex;
@@ -290,10 +289,8 @@
 
           .swiper-button-next {
             cursor: pointer;
-          }
+            margin-right: 35px;
 
-          .swiper-pagination {
-            margin-bottom: 25px;
           }
 
           .swiper-button-prev {
@@ -328,7 +325,6 @@
           }
 
           .card {
-            margin-bottom: 50px;
             width: 295px;
             height: 398px;
             border-radius: 10px;
@@ -443,7 +439,6 @@
         .card-box {
           width: 100%;
           position: relative;
-          padding: 50px 0;
 
 
           .empty-list {
@@ -457,6 +452,7 @@
           .blog-swiper {
             width: 100%;
             height: 280px;
+
 
             .blog-swiper-slide {
               display: flex;
@@ -568,12 +564,131 @@
             cursor: pointer;
 
             img {
+              width: 30px;
+              height: 30px;
+            }
+          }
+
+          .swiper-blog-prev {
+            cursor: pointer;
+
+            img {
+              width: 25px;
+              height: 25px;
+            }
+
+          }
+        }
+
+      }
+
+    }
+
+
+
+
+    .top-customer {
+      background-color: #f2f2f2;
+      width: 100%;
+      height: 605px;
+
+      .container {
+        margin-top: 20px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+        .card-box {
+          width: 100%;
+          position: relative;
+
+
+          .empty-list {
+            width: 100%;
+            height: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .customer-swiper {
+            width: 100%;
+            height: 400px;
+
+
+
+            .customer-swiper-slide {
+              display: flex;
+              height: 100%;
+              margin: 10px 0 0 10px;
+            }
+          }
+
+          .card {
+            width: 222px;
+            height: 335px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: transform 0.3s;
+            cursor: pointer;
+            gap: 20px;
+            padding: 10px;
+
+
+            &:hover {
+              opacity: 1;
+              transform: scale(1.05);
+            }
+
+            img {
+              width: 200px;
+              height: 190px;
+              border-radius: 50%;
+            }
+
+            strong {
+              color: #4A4748;
+              font-family: Comfortaa;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 120%;
+              /* 19.2px */
+            }
+
+          }
+
+        }
+
+
+
+        .customer-pagination-box {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 20px;
+
+          .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            background: #000000;
+          }
+
+          .swiper-customer-next {
+            cursor: pointer;
+
+            img {
               width: 35px;
               height: 35px;
             }
           }
 
-          .swiper-blog-prev {
+          .swiper-customer-prev {
             cursor: pointer;
 
             img {
@@ -587,6 +702,54 @@
       }
 
     }
+
+
+    .news-letter {
+      width: 100%;
+      height: 290px;
+      background-color: #fff1f1;
+
+      .container {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        gap: 24px;
+
+
+        .search-field {
+          display: flex;
+          flex-direction: row;
+          gap: 12px;
+          justify-content: center;
+
+          input {
+            display: flex;
+            width: 377px;
+            height: 55px;
+            padding: 10px 20px;
+            align-items: center;
+            border-radius: 10px;
+            border: 2px solid var(--Border, #D4D4D4);
+            background: #FFF;
+          }
+
+          .search-btn {
+            width: 82px;
+            height: 50px;
+            padding: 0 10px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            background: #0F83B2;
+            color: white;
+          }
+        }
+      }
+    }
+
+
+
 
 
 

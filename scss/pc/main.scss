@@ -87,6 +87,15 @@ body::-webkit-scrollbar {
             }
 
 
+            .to-cart {
+              display: flex;
+              position: absolute;
+              color: #ddd;
+              top: 8px
+            }
+
+
+
             .login-sign_button {
               width: 165px;
               display: flex;

@@ -11,10 +11,10 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import { CaretDown } from 'phosphor-react';
 import Link from 'next/link';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
-import { Logout } from '@mui/icons-material';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const PardaTop = () => {
-  const user = null;
+  const user: Boolean = true;
   const { t, i18n } = useTranslation('common');
   const router = useRouter();
   const [anchorEl2, setAnchorEl2] = useState<null | HTMLElement>(null);
@@ -195,6 +195,16 @@ const PardaTop = () => {
             <img src="/img/icons/delirvery.svg" alt="no image" />
             Free shipping with over 100$ purchase
           </Link>
+          {!user ? (
+            <Button sx={{right: "270px"}}  href="/cart" className='to-cart'>
+              <ShoppingCartOutlinedIcon />
+            </Button>
+          ) : (
+            <Button sx={{right: "215px"}} href="/cart" className='to-cart'>
+              <ShoppingCartOutlinedIcon />
+            </Button>
+          )}
+
 
 
           {!user ? (

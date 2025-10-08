@@ -1,12 +1,13 @@
 import Advertisement from "@/libs/components/homepage/Advertisment";
 import Collection from "@/libs/components/homepage/Collection";
 import PopularProducts from "@/libs/components/homepage/PopularProdcut";
-import PopularProduct from "@/libs/components/homepage/PopularProdcut";
 import RecentBlog from "@/libs/components/homepage/RecentBlogs";
 import TopPick from "@/libs/components/homepage/TopPick";
+import TopCustomer from "@/libs/components/homepage/TopCustomer";
 import withLayoutMain from "@/libs/components/layout/LayoutHome";
 import { Box, Container, Stack } from "@mui/material";
 import { NextPage } from "next";
+import NewsLetter from "@/libs/components/homepage/NewsLetter";
 
 const Home: NextPage = () => {
   return (
@@ -17,13 +18,8 @@ const Home: NextPage = () => {
         <Advertisement/>
         <PopularProducts/>
         <RecentBlog/>
-        <Stack className="container">Photos</Stack>
-
-        <Stack className="container">TopUsers</Stack>
-
-        <Stack className="container">Delivery</Stack>
-
-        <Stack className="container">NewsLetter</Stack>
+        <TopCustomer/>
+        <NewsLetter/>
 
       </Stack>
 

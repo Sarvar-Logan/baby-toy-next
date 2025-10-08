@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
-import { Stack, Box } from '@mui/material';
-import WestIcon from '@mui/icons-material/West';
-import EastIcon from '@mui/icons-material/East';
-import PopularProductCard from './PopularProductCard';
+import { Stack, Box, Link } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import NorthEastOutlinedIcon from '@mui/icons-material/NorthEastOutlined';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Tune } from '@mui/icons-material';
 import RecentBlogCard from './RecentBlogCard';
 
 
@@ -19,7 +16,7 @@ import RecentBlogCard from './RecentBlogCard';
 
 const RecentBlog = () => {
   const [recentBlog, setRecentBlog] = useState<number[]>([
-    1, 2, 3, 4, 
+    1, 2, 3, 4,
   ]);
 
 
@@ -31,6 +28,23 @@ const RecentBlog = () => {
           <span>Hear from Other Happy Parents</span>
           <p>Customer testimonials</p>
         </Stack>
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            width: "100%",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            fontSize: "13px",
+            marginTop: "80px"
+          }}
+        >
+          <Link href="/shop">
+            See other blogs
+            <NorthEastOutlinedIcon sx={{ fontSize: "13px" }} />
+          </Link>
+        </Stack>
+
         <Stack className={'card-box'}>
           {recentBlog.length === 0 ? (
             <Box component={'div'} className={'empty-list'}>
@@ -85,15 +99,15 @@ const RecentBlog = () => {
             </Swiper>
           )}
         </Stack>
-          <div className={'blog-pagination-box'}>
-            <div className="swiper-blog-prev">
-              <img src='img/icons/BackTo.svg' />
-            </div>
-            <div className="pagination-blog"></div>
-            <div className="swiper-blog-next" >
-              <img src='img/icons/Next page.svg' />
-            </div>
+        <div className={'blog-pagination-box'}>
+          <div className="swiper-blog-prev">
+            <img src='img/icons/BackTo.svg' />
           </div>
+          <div className="pagination-blog"></div>
+          <div className="swiper-blog-next" >
+            <img src='img/icons/Next page.svg' />
+          </div>
+        </div>
       </Stack>
     </Stack>
   );
