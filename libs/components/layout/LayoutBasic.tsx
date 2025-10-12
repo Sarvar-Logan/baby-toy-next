@@ -15,9 +15,6 @@ const withLayoutBasic = (Component: any) => {
           <Stack sx={{background: "#ccf4ffff"}} id={"top"}>
             <Top />
           </Stack>
-          <Stack className="header-basic">
-
-          </Stack>
 
           <Stack id={"main"}>
             <Component {...props} />

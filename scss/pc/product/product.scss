@@ -1,0 +1,403 @@
+#pc-wrap {
+  #product-list-page {
+    background: #f6f6f6;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+
+      .top {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 3px;
+        left: 0;
+      }
+
+      .products-page {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 20px 0 80px 0;
+        gap: 60px;
+
+        // FILTER CHAP TARAF
+        .filter-config {
+          margin-top: 40px;
+          display: flex;
+          width: 290px;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 40px;
+
+          .filter-main {
+            width: 100%;
+            background: #fff;
+            padding: 30px 24px;
+            box-shadow: 0 1px 4px 0 rgba(24, 26, 32, 0.07);
+
+
+
+
+            .filter-product {
+              flex-direction: column;
+              display: flex;
+              width: 100%;
+              align-items: flex-start;
+              gap: 40px;
+
+              .title {
+                color: var(--Header, #2C2728);
+                text-align: center;
+                font-family: "Chalkboard SE";
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 120%;
+              }
+
+              .input-box {
+                position: relative;
+                width: 100%;
+                flex-direction: row;
+                align-items: center;
+
+                .product-checkbox {
+                  width: 16px;
+                  height: 15px;
+                  border-radius: 12px;
+                  margin-right: 10px;
+                }
+
+                .product-type {
+                  color: #181a20;
+                  font-family: $font;
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 19px;
+                }
+              }
+            }
+          }
+
+          .filter-second {
+            width: 100%;
+            background: #fff;
+            padding: 30px 24px;
+            box-shadow: 0 1px 4px 0 rgba(24, 26, 32, 0.07);
+
+            .price-product {
+              display: flex;
+              width: 100%;
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 40px;
+
+              .title {
+                color: var(--Header, #2C2728);
+                text-align: center;
+                font-family: "Chalkboard SE";
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 120%;
+
+              }
+
+              .filter-btn {
+                width: 137px;
+                height: 54px;
+                flex-shrink: 0;
+                border-radius: 15px;
+                background: #0F83B2;
+                color: #FFF;
+                text-align: center;
+                font-family: Comfortaa;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 140%;
+                /* 28px */
+              }
+            }
+          }
+
+
+          .filter-popular {
+            width: 100%;
+            background: #fff;
+            padding: 30px 24px;
+            align-items: center;
+
+            .header-name {
+              color: var(--Header, #2C2728);
+              text-align: center;
+              font-family: "Chalkboard SE";
+              font-size: 24px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 120%;
+            }
+
+            .popular-card {
+              display: flex;
+              width: 290px;
+              padding: 30px 10px;
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 40px;
+
+              .all-info {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 6px;
+                margin-left: 2px;
+
+                img {
+                  width: 84px;
+                  height: 84px;
+                }
+
+                .info {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: flex-start;
+
+                  .title {
+                    font-family: Comfortaa;
+                    font-size: 17px;
+                    font-style: normal;
+                    font-weight: 520;
+                    line-height: 120%;
+                  }
+
+                  .price {
+                    color: #404140;
+                    font-family: Poppins;
+                    font-size: 17px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 120%;
+                    /* 21.6px */
+                  }
+
+                  .rating {
+                    color: #FFDA1C;
+                  }
+                }
+
+              }
+            }
+          }
+
+        }
+
+
+
+
+
+
+        // PRODUCTLAR O'NG TARAF
+        .main-config {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          align-items: center;
+          width: 880px;
+          gap: 40px;
+          margin-top: 40px;
+
+
+
+
+
+          .sorting-config {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-left: 10px;
+
+            .default-sorting {
+              display: flex;
+              flex-direction: row;
+              width: 280px;
+              align-items: center;
+
+              .sorting-title {
+                color: var(--Header1, #171717);
+                font-family: Comfortaa;
+                font-size: 16.022px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 120%;
+              }
+
+              img {
+                width: 18.024px;
+                height: 18.024px;
+              }
+            }
+
+            .total-result {
+              color: var(--Header1, #171717);
+              text-align: center;
+              font-family: Comfortaa;
+              font-size: 16.022px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 140%;
+              margin-right: 80px;
+            }
+          }
+
+
+          .list-config {
+
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            box-sizing: border-box;
+
+
+
+            .card {
+              width: 270px;
+              height: 370px;
+              border-radius: 10px;
+              flex: 1 1 calc(33.333% - 24px);
+              max-width: calc(33.333% - 24px);
+              box-sizing: border-box;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              position: relative;
+              transition: transform 0.3s;
+              cursor: pointer;
+              padding: 10px;
+
+
+              &:hover {
+                opacity: 1;
+                transform: scale(1.05);
+              }
+
+              .sale-badge {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                background-color: #f28b82;
+                color: white;
+                padding: 2px 8px;
+                font-size: 12px;
+                font-weight: bold;
+                border-radius: 12px;
+              }
+
+              .icons {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                display: flex;
+                gap: 8px;
+
+                .icon-btn {
+                  background: none;
+                  border: none;
+                  cursor: pointer;
+                  padding: 4px;
+                  border-radius: 4px;
+                  transition: background-color 0.2s;
+                }
+
+                .icon {
+                  width: 24px;
+                  height: 24px;
+                  color: #7F7F7F;
+                  cursor: pointer;
+                }
+              }
+
+              img {
+                width: 100%;
+                height: 290px;
+                object-fit: contain;
+                border-radius: 5px;
+              }
+
+              .info {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding-left: 4px;
+                position: relative;
+
+                .title {
+                  font-size: 15px;
+                  font-weight: 500;
+                  margin: 10px 0 5px 0;
+                }
+
+                .price {
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #4caf50;
+
+                  .old-price {
+                    text-decoration: line-through;
+                    font-weight: normal;
+                    color: #888;
+                    margin-left: 8px;
+                    font-size: 14px;
+                  }
+                }
+
+                .rating {
+                  margin-top: 5px;
+                  color: #fdd835;
+                }
+
+                .view {
+                  display: flex;
+                  position: absolute;
+                  top: 12px;
+                  right: 20px;
+                  color: #888;
+                  gap: 2px;
+                  align-items: center;
+
+                  span {
+                    font-size: 12px
+                  }
+
+                  ;
+                }
+
+              }
+            }
+
+
+          }
+
+          .pagination-config {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+          }
+
+        }
+
+      }
+
+
+
+    }
+  }
+}

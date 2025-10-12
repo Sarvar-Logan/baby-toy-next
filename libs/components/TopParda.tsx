@@ -7,14 +7,13 @@ import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import { alpha, styled } from '@mui/material/styles';
 import Menu, { MenuProps } from '@mui/material/Menu';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { CaretDown } from 'phosphor-react';
 import Link from 'next/link';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const PardaTop = () => {
-  const user: Boolean = true;
+  const user: Boolean = false;
   const { t, i18n } = useTranslation('common');
   const router = useRouter();
   const [anchorEl2, setAnchorEl2] = useState<null | HTMLElement>(null);
