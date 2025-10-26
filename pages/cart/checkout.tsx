@@ -9,7 +9,7 @@ const Checkout: NextPage = () => {
   });
 
   const [payment, setPayment] = useState("credit");
-  const [products] = useState([
+  const [products, setProducts] = useState([
     { id: 1, name: "Blocks shape-sorting Toy", amount: 2, price: 78.00, image: "/img/products/image4.svg" },
     { id: 2, name: "Carrot harvest wooden Toy", amount: 1, price: 29.00, image: "/img/products/image5.svg" },
     { id: 3, name: "Talking flash cards Learning Toys", amount: 2, price: 78.00, image: "/img/products/image2.svg" },
