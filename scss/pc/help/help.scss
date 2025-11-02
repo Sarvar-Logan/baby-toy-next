@@ -1,0 +1,45 @@
+#pc-wrap {
+  .help {
+    .container {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin-bottom: 50px;
+
+      h2 {
+        color: var(--Header, #191919);
+        text-align: center;
+        font-family: "Chalkboard SE";
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+        margin-bottom: 50px;
+      }
+
+      .help-toggle {
+        margin-top: 20px;
+        .toggle-btn {
+          border: none;
+          span {
+            color: black;
+            font-family: Comfortaa;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 16px;
+          }
+        }
+
+        p {
+          color: var(--Header1, #2D2D2D);
+          font-family: Comfortaa;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%;
+        }
+      }
+    }
+  }
+}

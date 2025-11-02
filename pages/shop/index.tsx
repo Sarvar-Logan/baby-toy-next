@@ -16,7 +16,7 @@ const Shop: NextPage = () => {
   // PAGINATION UCHUN 
   const [products] = useState(
     Array.from({ length: 28 }, (_, i) => `Product ${i + 1}`)
-  ); // misol uchun 28 ta product
+  ); 
   const [page, setPage] = useState(1);
 
   const itemsPerPage = 9;

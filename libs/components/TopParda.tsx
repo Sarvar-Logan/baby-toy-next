@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import { useState } from 'react';
 import { useRouter, withRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
-import { Stack, Box } from '@mui/material';
+import { Stack, Box, Fade, Modal, Backdrop } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import { alpha, styled } from '@mui/material/styles';
@@ -11,6 +11,7 @@ import { CaretDown } from 'phosphor-react';
 import Link from 'next/link';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import Auth from './Register';
 
 const PardaTop = () => {
   const user: Boolean = false;
@@ -25,6 +26,11 @@ const PardaTop = () => {
   const [bgColor, setBgColor] = useState<boolean>(false);
   const [logoutAnchor, setLogoutAnchor] = React.useState<null | HTMLElement>(null);
   const logoutOpen = Boolean(logoutAnchor);
+
+
+  // Yangi state'lar qo'shamiz
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [authView, setAuthView] = useState('login'); // 'login' yoki 'register'
 
   /** LIFECYCLES **/
   // useEffect(() => {
@@ -84,6 +90,21 @@ const PardaTop = () => {
     } else {
       setAnchorEl(null);
     }
+  };
+
+
+  // Auth modal handlers
+  const handleOpenAuthModal = (view: string) => {
+    setAuthView(view);
+    setAuthModalOpen(true);
+  };
+
+  const handleCloseAuthModal = () => {
+    setAuthModalOpen(false);
+  };
+
+  const handleSwitchAuthView = (view: string) => {
+    setAuthView(view);
   };
 
   const StyledMenu = styled((props: MenuProps) => (
@@ -195,11 +216,11 @@ const PardaTop = () => {
             Free shipping with over 100$ purchase
           </Link>
           {!user ? (
-            <Button sx={{right: "270px"}}  href="/cart" className='to-cart'>
+            <Button sx={{ right: "270px" }} href="/cart" className='to-cart'>
               <ShoppingCartOutlinedIcon />
             </Button>
           ) : (
-            <Button sx={{right: "215px"}} href="/cart" className='to-cart'>
+            <Button sx={{ right: "215px" }} href="/cart" className='to-cart'>
               <ShoppingCartOutlinedIcon />
             </Button>
           )}
@@ -209,8 +230,8 @@ const PardaTop = () => {
           {!user ? (
             <>
               <Stack className="login-sign_button">
-                <Button variant="outlined">Login</Button>
-                <Button variant="outlined">Register</Button>
+                <Button variant="outlined" onClick={() => handleOpenAuthModal('login')}>Login</Button>
+                <Button variant="outlined" onClick={() => handleOpenAuthModal('register')}>Register</Button>
               </Stack>
             </>
           ) : (
@@ -289,12 +310,47 @@ const PardaTop = () => {
               </MenuItem>
             </StyledMenu>
           </div>
-
-
-
-
         </Stack>
       </Stack>
+
+      <Modal
+        open={authModalOpen}
+        onClose={handleCloseAuthModal}
+        closeAfterTransition
+        slots={{ backdrop: Backdrop }}
+        slotProps={{
+          backdrop: {
+            timeout: 500,
+          },
+        }}
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Fade in={authModalOpen}>
+          <Box
+            sx={{
+              backgroundColor: 'white',
+              borderRadius: '10px',
+              boxShadow: 24,
+              p: 4,
+              maxWidth: '400px',
+              width: '90%',
+              maxHeight: '90vh',
+              overflow: 'auto',
+            }}
+          >
+            {/* Auth komponentini ishlatamiz */}
+            <Auth
+              activeView={authView}
+              onSwitchView={handleSwitchAuthView}
+              onClose={handleCloseAuthModal}
+            />
+          </Box>
+        </Fade>
+      </Modal>
     </>
   )
 }
