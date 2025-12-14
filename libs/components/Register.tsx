@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Box, Button, Stack, Typography, TextField } from '@mui/material';
 import { Close } from '@mui/icons-material';
+import { logIn, signUp } from '../auth';
+import router from 'next/router';
+import { sweetMixinErrorAlert } from '../sweetAlert';
 
 interface AuthProps {
   activeView: string;
@@ -9,51 +12,53 @@ interface AuthProps {
 }
 
 const Auth: React.FC<AuthProps> = ({ activeView, onSwitchView, onClose }) => {
-  // Login formasi uchun state
-  const [loginData, setLoginData] = useState({
-    email: '',
-    password: ''
-  });
 
-  // Register formasi uchun state
-  const [registerData, setRegisterData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
-  });
+  const [input, setInput] = useState({ nick: '', password: '', phone: '', type: 'USER' });
+  const [loginView, setLoginView] = useState<boolean>(true);
 
-  // Login inputlarini boshqarish
-  const handleLoginChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setLoginData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+
+  const viewChangeHandler = (state: boolean) => {
+    setLoginView(state);
   };
 
-  // Register inputlarini boshqarish
-  const handleRegisterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setRegisterData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+  const checkUserTypeHandler = (e: any) => {
+    const checked = e.target.checked;
+    if (checked) {
+      const value = e.target.name;
+      handleInput('type', value);
+    } else {
+      handleInput('type', 'USER');
+    }
   };
+
+  const handleInput = useCallback((name: any, value: any) => {
+    setInput((prev) => {
+      return { ...prev, [name]: value };
+    });
+  }, []);
+
 
   // Login submit
-  const handleLoginSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Login data:', loginData);
-    // Bu yerda login logikangiz bo'ladi
-  };
+  const handleLoginSubmit = useCallback(async () => {
+    console.warn(input);
+    try {
+      await logIn(input.nick, input.password);
+      await router.push(`${router.query.referrer ?? '/'}`);
+    } catch (err: any) {
+      await sweetMixinErrorAlert(err.message);
+    }
+  }, [input]);
 
   // Register submit
-  const handleRegisterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Register data:', registerData);
-    // Bu yerda register logikangiz bo'ladi
-  };
+  const handleRegisterSubmit = useCallback(async () => {
+    console.warn(input);
+    try {
+      await signUp(input.nick, input.password, input.phone, input.type);
+      await router.push(`${router.query.referrer ?? '/'}`);
+    } catch (err: any) {
+      await sweetMixinErrorAlert(err.message);
+    }
+  }, [input]);
 
   return (
     <Box sx={{ position: 'relative' }}>
@@ -107,14 +112,12 @@ const Auth: React.FC<AuthProps> = ({ activeView, onSwitchView, onClose }) => {
           <Typography variant="h5" sx={{ mb: 3, textAlign: 'center' }}>
             Hisobingizga kiring
           </Typography>
-          
+
           <TextField
             fullWidth
             label="Email"
-            name="email"
-            type="email"
-            value={loginData.email}
-            onChange={handleLoginChange}
+            type="text"
+            onChange={(e) => handleInput('nick', e.target.value)}
             margin="normal"
             required
           />
@@ -122,10 +125,8 @@ const Auth: React.FC<AuthProps> = ({ activeView, onSwitchView, onClose }) => {
           <TextField
             fullWidth
             label="Parol"
-            name="password"
             type="password"
-            value={loginData.password}
-            onChange={handleLoginChange}
+            onChange={(e) => handleInput('password', e.target.value)}
             margin="normal"
             required
           />
@@ -153,13 +154,12 @@ const Auth: React.FC<AuthProps> = ({ activeView, onSwitchView, onClose }) => {
           <Typography variant="h5" sx={{ mb: 3, textAlign: 'center' }}>
             Yangi hisob yarating
           </Typography>
-          
+
           <TextField
             fullWidth
             label="Ism"
             name="name"
-            value={registerData.name}
-            onChange={handleRegisterChange}
+            onChange={(e) => handleInput('nick', e.target.value)}
             margin="normal"
             required
           />
@@ -168,9 +168,8 @@ const Auth: React.FC<AuthProps> = ({ activeView, onSwitchView, onClose }) => {
             fullWidth
             label="Email"
             name="email"
-            type="email"
-            value={registerData.email}
-            onChange={handleRegisterChange}
+            type="text"
+            onChange={(e) => handleInput('phone', e.target.value)}
             margin="normal"
             required
           />
@@ -180,23 +179,10 @@ const Auth: React.FC<AuthProps> = ({ activeView, onSwitchView, onClose }) => {
             label="Parol"
             name="password"
             type="password"
-            value={registerData.password}
-            onChange={handleRegisterChange}
+            onChange={(e) => handleInput('password', e.target.value)}
             margin="normal"
             required
           />
-
-          <TextField
-            fullWidth
-            label="Parolni tasdiqlang"
-            name="confirmPassword"
-            type="password"
-            value={registerData.confirmPassword}
-            onChange={handleRegisterChange}
-            margin="normal"
-            required
-          />
-
           <Button
             type="submit"
             fullWidth

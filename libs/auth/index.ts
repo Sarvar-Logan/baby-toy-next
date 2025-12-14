@@ -140,9 +140,8 @@ export const updateUserInfo = (jwtToken: any) => {
 			claims.memberImage === null || claims.memberImage === undefined
 				? '/img/profile/defaultUser.svg'
 				: `${claims.memberImage}`,
-		memberAddress: claims.memberAddress ?? '',
+		memberAdress: claims.memberAdress ?? '',
 		memberDesc: claims.memberDesc ?? '',
-		memberProperties: claims.memberProperties,
 		memberRank: claims.memberRank,
 		memberArticles: claims.memberArticles,
 		memberPoints: claims.memberPoints,
@@ -174,9 +173,8 @@ const deleteUserInfo = () => {
 		memberNick: '',
 		memberFullName: '',
 		memberImage: '',
-		memberAddress: '',
+		memberAdress: '',
 		memberDesc: '',
-		memberProperties: 0,
 		memberRank: 0,
 		memberArticles: 0,
 		memberPoints: 0,
